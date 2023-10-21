@@ -2,15 +2,12 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeOperation, selectOperation } from "./redux/userSlice";
-import anaImage from './assets/ana.png';
-
 
 function App() {
   const [firstNumber, setFirstNumber] = useState("");
   const [secondNumber, setSecondNumber] = useState("");
   const [result, setResult] = useState("");
   const [conta, setConta] = useState("");
-  const [ana, setAna] = useState(false);
 
   const dispatch = useDispatch();
   const { operation } = useSelector(selectOperation);
@@ -118,12 +115,6 @@ function App() {
         </button>
       </form>
       <h1>Conta: {conta}</h1>
-      <label>Você é a Ana?</label>
-      <button onClick={() => setAna(true)}>Sim</button>
-      <button onClick={() => setAna(false)}>Não</button>
-      { ana ? <img src={anaImage} alt="ana"></img> :
-      <div></div>
-      }
     </div>
   );
 }
